@@ -32,6 +32,8 @@ window.menu = [{ text: '项目状态', img: './img/file_white.svg',
                                 return res.text();
                             }).then(function (text) {
                                 return text.replace('\r\n', '').split(',');
+                            }).catch(function () {
+                                return [];
                             });
 
                         case 2:
@@ -169,3 +171,10 @@ ReactDOM.render(React.createElement(
     null,
     React.createElement(App, null)
 ), document.getElementById('root'));
+
+window.onload = function () {
+    var icons = document.createElement('span');
+    icons.style.cssText = 'position:absolute;z-index:-1;visibility:hidden;top:0;left:0;';
+    icons.innerHTML = '<img src=\'img/trashBin_white.svg\'><img src=\'img/view_white.svg\'>';
+    document.body.appendChild(icons);
+};
