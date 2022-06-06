@@ -1,0 +1,210 @@
+:root{
+    --black: #20232a;
+    --white: #E0E0E0;
+}
+body{margin: 0;width: 100vw;}
+.hide{display: none;}
+a{text-decoration: none;color: inherit;cursor: pointer;}
+.pure{background: none;outline: none;}
+.shadow{box-shadow: 2px 2px 5px rgba(0,0,0,0.5);}
+#Nav{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: var(--black);
+    color: var(--white);
+    height: 64px;
+    line-height: 64px;
+    font-weight: bold;
+    user-select: none;
+}
+img#logoMobile {
+    width: 32px;
+    background: var(--black);
+    position: absolute;
+    right: -80px;
+    padding: 16px;
+    padding-left: 32px;
+    top: 28px;
+    border-bottom-right-radius: 32px;
+    border-top-right-radius: 32px;
+    display: none;
+}
+#logo{
+    height: 56px;
+    margin: 4px 2rem;
+}
+img.Nav{
+    height: 40px;
+    margin: 12px 6px;
+    margin-left: 0;
+    float: left;
+    -webkit-user-drag: none;
+}
+a.Nav{
+    padding: 0 24px;
+}
+a.Nav:hover::after {
+    content: '';
+    background: #ffffff;
+    width: 90%;
+    margin: 0 5%;
+    height: 0.25rem;
+    display: block;
+    position: relative;
+    bottom: 0.5rem;
+    border-radius: 0.25rem;
+}
+#Popups{
+    width: 100vw;
+    height: calc(100vh - 64px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.17);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.PopupsContain{
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 5px;
+    max-height: 80%;
+    max-width: 80%;
+    overflow-y: auto;
+}
+#Wins{
+    height: calc(100vh - 64px);
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Project{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+ul {
+    list-style: none;
+    background: #fff;
+    margin: 0;
+    padding: 10px 0;
+    border-radius: 4px;
+    min-width: 16rem;
+}
+li.list{
+    padding: 0.1rem 0.5rem;
+
+}
+.listValue {
+    text-align: right;
+    color: #666;
+}
+li.list:hover {
+    background: #ececec;
+}
+button.Btn {
+    background: #2196f3;
+    color: #fff;
+    border: 0;
+    margin: 1rem 1rem;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    width: 4.5rem;
+    float: left;
+}
+button.BtnR{
+    float: right;
+}
+select.pure,input.pure{
+    border-width: 0 0 2px 0;
+    text-align: center;
+}
+input.pure{
+    width: 5rem;
+}
+input.pure:focus,select.pure:focus{
+    border-color: #4CAF50;
+}
+#mergePre,#StateMap{
+    width: calc(75vh + 100px);
+    height: 75vh;
+}
+#MergeArea {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.inline {
+    display: inline-block;
+    margin: 0 .5rem;
+}
+#Tasks{
+    display: flex;
+}
+.hrPlus{
+    background: rgb(51, 51, 51);
+    margin: 2rem;
+    height: 2px;
+}
+.Graphics {
+    width: 90%;
+    height: 90%;
+
+}
+button.imgBtn {
+    height: 2.2rem;
+    border: 0;
+    margin: 0.2rem 0.5rem;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+img.imgBtn {
+    height: 100%;
+}
+
+@media only screen and (orientation: portrait) {
+    #Project,#Nav,#Tasks{
+        flex-direction: column;
+    }
+    #Wins,#Popups{
+        width: 100vw;
+        height: 100vh;
+    }
+    img#logoMobile{
+        display: block;
+    }
+    img#logo{
+        margin: 32px 2rem;
+    }
+    #Nav{
+        height: unset;
+        position: fixed;
+        z-index: 2;
+        right: 496px;
+    }
+    #Nav:hover{
+        right: unset;
+    }
+    #StateMap{
+        width: 100vw;
+        height: 100vw;
+    }
+    .hrPlus{
+        height: 2px;
+        width: unset;
+    }
+    .Graphics{
+        width: 100vw;
+        height: 100vw;
+    }
+}
