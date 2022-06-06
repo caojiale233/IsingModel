@@ -1,3 +1,5 @@
+export { Project, MergeArea, Tasks, DrawOption, MoreWindows , App }
+
 /* 方法集
     window.Utils=new Utils()
  */
@@ -172,7 +174,7 @@ class Navigation extends React.Component{
             <div id='Nav' className='shadow' >
                 <img id='logoMobile' src='img/menu.svg' />
                 <img id='logo' src='img/logo.png' />
-                {menu.map(i=>(<a className='Nav' key={i.text} onClick={i.click} ><img className='Nav' src={i.img} />{i.text}</a>))}
+                {window.menu.map(i=>(<a className='Nav' key={i.text} onClick={i.click} ><img className='Nav' src={i.img} />{i.text}</a>))}
             </div>
         );
     }

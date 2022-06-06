@@ -1,10 +1,11 @@
-const Theme='#4CAF50';
+import { Project, MergeArea, Tasks, DrawOption, MoreWindows , App } from './components.js'
+window.Theme='#4CAF50';
 
 window.project={"projName": '', "size": [0, 0], "J": '——', "kT": [1,1.5,2,2.5], "kT_done": [], "uB": [0,1,2,3,4], "uB_done": [], "doing": '', "ID": ["——", "——"]};
 
 window.projectList=[];
 
-const menu=[
+window.menu=[
     {text: '项目状态',img: './img/file_white.svg',
         click: ()=>{window.Method.Wins('project')}},
     {text: '计算任务',img: './img/browser.svg',
@@ -21,18 +22,18 @@ const menu=[
         click: async ()=>{window.Method.Popups('more');}}
 ];
 
-const wins=new Map([
+window.wins=new Map([
     ['project',<Project />],
     ['merge',<MergeArea />]
 ]);
 
-const popups=new Map([
+window.popups=new Map([
     ['task',<Tasks />],
     ['draw',<DrawOption />],
     ['more',<MoreWindows />]
 ]);
 const dims=['kT','uB','取样成功率','单粒子内能','单粒子磁化强度','单粒子热容','单粒子熵','偏移单粒子内能','偏移单粒子热容','偏移单粒子熵','能量平方','能量与广义力之积','偏移EM积'];
-const StateMapOption={
+window.StateMapOption={
     grid: {
       right: 100,
       top: 65,
@@ -75,7 +76,7 @@ const StateMapOption={
     ]
 };
 const tooltipForm=(params=>[0,1,(params.encode.value||params.encode.z)[0],2].map(v=>`${params.marker}${dims[v]}:<strong style="margin-left:1rem;">${params.data[v]}</strong><br>`).join(''));
-const heatmapOption={
+window.heatmapOption={
     dataset: {sourceHeader: false, dimensions:dims,source:[]},
     grid: {
       left: '20%',
@@ -96,7 +97,7 @@ const heatmapOption={
     series: {type: 'heatmap', encode: {x: 'uB', y: 'kT'}, name:'', progressive: 1000}
 };
 
-const bar3DOption={
+window.bar3DOption={
     dataset: {sourceHeader: false, dimensions:dims,source:[]},
     backgroundColor:'#100C2A',
     tooltip:{position:['2.8%','5%'],formatter:tooltipForm},
