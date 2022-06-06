@@ -17,6 +17,7 @@ window.menu=[
         window.projectList=await fetch('./execute',{method:'POST',body:`{"method": "listAll", "arguments": {}}`})
         .then(res=>res.text())
         .then(text=>text.replace('\r\n','').split(','))
+		.catch(()=>[])
         window.Method.Wins('merge')}},
     {text: '更多窗口',img: './img/more_white.svg',
         click: async ()=>{window.Method.Popups('more');}}
@@ -115,8 +116,15 @@ window.bar3DOption={
 
 
 ReactDOM.render(
-            <React.StrictMode>
-                <App />
-            </React.StrictMode>,
-            document.getElementById('root')
-        );
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+);
+
+window.onload=()=>{
+	const icons=document.createElement('span');
+	icons.style.cssText='position:absolute;z-index:-1;visibility:hidden;top:0;left:0;';
+	icons.innerHTML=`<img src='img/trashBin_white.svg'><img src='img/view_white.svg'>`;
+	document.body.appendChild(icons);
+}
